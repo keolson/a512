@@ -8,7 +8,7 @@
 	display:none;
 }
 body {
-	color: #FFF;
+/*	color: #FFF;*/
 	font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,Tahoma,Arial,sans-serif;
 	font-size: 11px;
 }
@@ -80,6 +80,9 @@ h6 {
 	clear: both;
 }
 
+.share_title {
+			 background #888888;
+	}			
 
 /* Tag Cloud CSS */
 .x-cloud  {
