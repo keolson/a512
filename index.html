@@ -12,61 +12,6 @@
   <script type="text/javascript" src="js/lib/ext/src/ux/CustomPaging.js" ></script>
   <script type="text/javascript" src="js/lib/ext/src/ux/TagCloud.js" ></script>
   <script type="text/javascript" src="js/core.js" ></script>
-	<script type="text/javascript" charset="utf-8">
-  
-      Ext.onReady(function(){
-      
-          // Make an array of sample tags
-          var sampleData = {
-          results : [
-              {tag: 'Social Security', count: 5},
-              {tag: 'Retirement', count: 9},
-              {tag: 'Savings Account', count: 5},
-              {tag: 'Stock Trading', count: 7},
-              {tag: 'Investment', count: 7},
-          ]};
-
-			sampleData.results.sort( function(){return (Math.round(Math.random())-0.5)});
-          
-          /* 
-           * Here we use a MemoryProxy to read in the JSON data.
-           * 
-           * This store could potentially read from any source you'd like (in-memory
-           * or stored server-side), and a variety of data formats from JSON, XML, 
-           * or simple arrays using the variety of DataProxy and DataReader 
-           * implementations supplied in Ext.data.
-           */
-          var ds = new Ext.data.Store({
-              proxy: new Ext.data.MemoryProxy(sampleData),
-              reader: new Ext.data.JsonReader({
-                  root: 'results',
-                 
-              }, [
-                  {name: 'tag'},
-      			{name: 'count'}
-              ]),
-              remoteSort: false
-          });
-
-      	var cloud = new Ext.ux.TagCloud({
-              store: ds, 
-              displayField: 'tag', 
-              weightField: 'count', 
-              displayWeight: false
-              }
-      	);
-
-          cloud.on('tagselect', function(cloud, record, index){
-              alert('You clicked on "'+record.get('tag')+'"!');
-          });
-      	cloud.render('cloud');
-
-      	ds.load();
-      
-      });
-  
-  </script>
-
 </head>
 <body>
 	<div id="container">

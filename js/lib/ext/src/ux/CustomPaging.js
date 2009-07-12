@@ -10,6 +10,7 @@ Ext.ux.CustomPaging = Ext.extend(Object, {
 		});
 
 		var pagingDivs= "";
+		var numPages = 4;
 		for( var i = 1; i <= 4; i++ ){
 			pagingDivs += '<div id="pagingDot' + i + '" class="pagingDot"></div>';
 		}
