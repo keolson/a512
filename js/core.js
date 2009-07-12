@@ -8,6 +8,25 @@ function genTopicCloud() {
             {tag: 'Stock Trading', count: 7},
             {tag: 'Investment', count: 7},
         ]};
+
+	var topicStore = new Ext.ux.data.PagingStore({
+		totalProperty: 'topic_count',
+		root: 'items',
+		idProperty: 'num',
+		fields: ['count', 'score', 'neigh'],
+		proxy: new Ext.data.HttpProxy({
+			url: '../api/getTopics.php',
+		}),
+		reader: new Ext.data.JsonReader({
+			totalProperty: 'topic_count',
+			root: 'topics',
+		}, [
+			{name: 'count'},
+			{name: 'score'},
+			{name: 'neigh'}
+		]),
+		autoLoad: { params: { start: 0, limit: 4, domain: 'foxnews.com', period: 30, topic: 'Obama' } }
+	});
 	
 	sampleData.results.sort( function(){return (Math.round(Math.random())-0.5)});
     
@@ -32,8 +51,8 @@ function genTopicCloud() {
     });
 	
     var cloud = new Ext.ux.TagCloud({
-        store: ds, 
-        displayField: 'tag', 
+        store: topicStore, 
+        displayField: 'neigh', 
         weightField: 'count', 
         displayWeight: false
     }
@@ -49,10 +68,10 @@ function genTopicCloud() {
 
 function genContentList() {
 	var store = new Ext.ux.data.PagingStore({
-		totalProperty: 'count',
+		totalProperty: 'url_count',
 		root: 'items',
 		idProperty: 'num',
-		fields: ['title', 'views', 'shares', 'services'],
+		fields: ['title', 'url', 'views', 'shares', 'services'],
 		proxy: new Ext.data.HttpProxy({
 			url: '../api/getTopics.php',
 		}),
@@ -61,6 +80,7 @@ function genContentList() {
 			root: 'urls',
 		}, [
 			{name: 'title'},
+			{name: 'url'},
 			{name: 'views'},
 			{name: 'shares'},
 			{name: 'services'}
@@ -71,7 +91,7 @@ function genContentList() {
 	var tpl = new Ext.XTemplate( 
 		'<tpl for=".">',
 		'<div class="listElement">',
-		    '<div class="resultTitle">{[Ext.util.Format.ellipsis(values.title, 60, true)]}</div>',
+		    '<div class="resultTitle"><a href="{url}">{[Ext.util.Format.ellipsis(values.title, 60, true)]}</a></div>',
 		    '<div class="resultViews">{views}</div>',
 		    '<div class="resultShares">{shares}</div>',
 		    '<div class="resultServices">{[this.formatServices(values.services)]}</div>',
