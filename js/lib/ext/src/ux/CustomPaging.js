@@ -2,6 +2,9 @@ Ext.ux.CustomPaging = Ext.extend(Object, {
 	init : function(pbar){
 		pbar.items.getRange()[0].hide();
 		pbar.items.getRange()[8].hide();
+//		pbar.items.getRange()[9].addItem({xtype:'-->'});
+	//	pbar.items.getRange()[11].hide();
+//		console.log(pbar.items);
 		Ext.each(pbar.items.getRange(2,6), function(c){
 			c.hide();
 		});

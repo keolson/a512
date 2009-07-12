@@ -46,10 +46,10 @@ Ext.onReady(function(){
 	var pagebar = new Ext.PagingToolbar({
 		pageSize: 4,
 		store: store,
-		plugins: new Ext.ux.CustomPaging()
+		ctCls:'pagingBar',
+		plugins: new Ext.ux.CustomPaging(),
 	});
-
-
+	
 
 
 	var panel = new Ext.Panel({
@@ -57,6 +57,8 @@ Ext.onReady(function(){
 			id: 'resultsView',
 			store: store,
 			tpl: tpl,
+			autoHeight:false,
+			height:222,
 			itemSelector:'div.thumb-wrap',
 		}),
 		bbar: pagebar

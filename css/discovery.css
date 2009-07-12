@@ -120,20 +120,76 @@ h6 {
 
 /*end tag cloud css */
 
-.pagingDot {
+.pagingBar{
+	margin-left:60px;
+}
+
+.pagingBar .pagingDot {
     float: left;
 	width: 20px;
     height: 20px;
-    background: url(../images/dot-unselect.png) no-repeat;
+    background: url(../images/arrowUnselected.png) no-repeat;
 
 }
 
-.pagingDot_selected {
+.pagingBar .pagingDot_selected {
     float: left;
 	width: 20px;
     height: 20px;
-    background: url(../images/dot-select.png) no-repeat;
+    background: url(../images/arrowSelected.png) no-repeat;
 }
+
+
+.pagingBar .x-tbar-page-next {
+	background-image:url(../images/rightArrow.png) !important;
+}
+.pagingBar .x-item-disabled .x-tbar-page-next {
+	background-image:url(../images/rightArrow.png) !important;
+}
+
+.pagingBar .x-tbar-page-prev {
+	background-image:url(../images/leftArrow.png) !important;
+}
+.pagingBar .x-item-disabled .x-tbar-page-prev {
+	background-image:url(../images/leftArrow.png) !important;
+}
+
+.pagingBar .x-toolbar {
+	background-color:#fff;
+	border-color:#fff;
+	background-image:none;
+}
+
+.pagingBar .xtb-text {
+	margin-top:5px;
+}
+
+.pagingBar .xtb-sep {
+	background-image:none;
+	margin-right:70px;
+}
+
+.pagingBar .x-btn-mc {
+}
+
+.pagingBar .x-toolbar-right{
+	display:none;
+}
+
+
+.pagingBar .x-toolbar-ct{
+	width:auto;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -3,6 +3,13 @@
  * Copyright(c) 2006-2009 Ext JS, LLC
  * licensing@extjs.com
  * http://www.extjs.com/license
+title
+#viewed
+#shared
+mostshared on
+
+
+
  */
 Ext.onReady(function(){
 
@@ -55,26 +62,8 @@ Ext.onReady(function(){
             dataIndex: 'title',
             width: 420,
             renderer: renderTopic,
-            sortable: true
-        },{
-            header: "Author",
-            dataIndex: 'author',
-            width: 100,
-            hidden: true,
-            sortable: true
-        },{
-            header: "Replies",
-            dataIndex: 'replycount',
-            width: 70,
-            align: 'right',
-            sortable: true
-        },{
-            id: 'last',
-            header: "Last Post",
-            dataIndex: 'lastpost',
-            width: 150,
-            renderer: renderLast,
-            sortable: true
+            sortable: false,
+			menuDisabled:true
         }],
 
         // customize view config
