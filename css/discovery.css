@@ -120,7 +120,20 @@ h6 {
 
 /*end tag cloud css */
 
+.pagingDot {
+    float: left;
+	width: 20px;
+    height: 20px;
+    background: url(../images/dot-unselect.png) no-repeat;
 
+}
+
+.pagingDot_selected {
+    float: left;
+	width: 20px;
+    height: 20px;
+    background: url(../images/dot-select.png) no-repeat;
+}
 
 
 
