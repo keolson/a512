@@ -48,6 +48,8 @@ h6 {
 	height:25px;
 	border:1px #58585A solid;
 	background:#58585A;
+	font-size:17.5px;
+	color:#fff;
 }
 #sorting{
 	height:15px;
@@ -55,7 +57,7 @@ h6 {
 	float:right;
 }
 #content{
-	height:270px;
+	/*height:270px;*/
 	border:1px #58585A solid;
 	border-top:2px #58585A solid;
 	border-bottom:2px #58585A solid;
@@ -68,6 +70,7 @@ h6 {
 	height:20px;
 	border:1px #58585A solid;
 	background:#58585A;
+	color:#fff;
 }
 
 .day{
@@ -78,13 +81,10 @@ h6 {
 }
 
 .share_title {
-			 background #888888;
-	}			
-
-
-
+	background #888888;
+}			
 .pagingBar{
-	margin-left:60px;
+	margin-left:85px;
 }
 
 .pagingBar .pagingDot {
@@ -129,7 +129,7 @@ h6 {
 
 .pagingBar .xtb-sep {
 	background-image:none;
-	margin-right:70px;
+	margin-right:50px;
 }
 
 .pagingBar .x-btn-mc {
@@ -207,10 +207,43 @@ h6 {
 	padding:0px;
 }
 /*end tag cloud css */
+.listElement{
+	border-bottom:1px #ccc solid;
+	margin:5px;
+	height:55px;
+}
 
+.resultTitle{
+	font-size:12px;
+	color:#3a3a3c;
+	font-weight:bold;
+	margin-bottom:5px;
+}
+.resultViews{
+	font-size:11px;
+	display:inline;
+	color:#a0a2a4;
+}
+.resultShares{
+	font-size:11px;
+	display:inline;
+	color:#a0a2a4;
+}
+.resultServices{
+	display:inline;
+	font-size:11px;
+	color:#a0a2a4;
+}
 
+.ad_text{
+	display:block;
+	text-align:center;
+	color:#3a3a3c;
+}
 
-
-
-
-
+.separator{
+	margin-right:8px;
+	margin-left:8px;
+	border:1px #ccc solid;
+	display:inline;
+}
