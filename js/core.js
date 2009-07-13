@@ -1,15 +1,5 @@
 function genTopicCloud() {
-    // Make an array of sample tags
-    var sampleData = {
-        results : [
-            {tag: ' Security', count: 5},
-            {tag: 'Retirement', count: 9},
-            {tag: 'Savings Account', count: 5},
-            {tag: 'Stock Trading', count: 7},
-            {tag: 'Investment', count: 7},
-        ]};
-
-	var topicStore = new Ext.ux.data.PagingStore({
+	topicStore = new Ext.ux.data.PagingStore({
 		totalProperty: 'topic_count',
 		root: 'items',
 		idProperty: 'num',
@@ -28,28 +18,8 @@ function genTopicCloud() {
 		autoLoad: { params: { start: 0, limit: 20, domain: 'foxnews.com', period: 30, topic: 'Obama' } }
 	});
 	
-	sampleData.results.sort( function(){return (Math.round(Math.random())-0.5)});
+		//sampleData.results.sort( function(){return (Math.round(Math.random())-0.5)});
     
-          /* 
-           * Here we use a MemoryProxy to read in the JSON data.
-           * 
-           * This store could potentially read from any source you'd like (in-memory
-           * or stored server-side), and a variety of data formats from JSON, XML, 
-           * or simple arrays using the variety of DataProxy and DataReader 
-           * implementations supplied in Ext.data.
-           */
-    var ds = new Ext.data.Store({
-        proxy: new Ext.data.MemoryProxy(sampleData),
-        reader: new Ext.data.JsonReader({
-            root: 'results',
-            
-              }, [
-                  {name: 'tag'},
-      			  {name: 'count'}
-              ]),
-        remoteSort: false
-    });
-	
     var cloud = new Ext.ux.TagCloud({
         store: topicStore, 
         displayField: 'tag', 
@@ -57,17 +27,16 @@ function genTopicCloud() {
         displayWeight: false
     }
       							   );
-	
     cloud.on('tagselect', function(cloud, record, index){
-        alert('You clicked on "'+record.get('tag')+'"!');
+			//        alert('You clicked on "'+record.get('tag')+'"!');
+		delete contentStore.lastParams;
+		contentStore.load( { params: { start: 0, limit: 4, domain: 'foxnews.com', period: 30, topic: record.get('tag') } });
     });
     cloud.render('cloud');
-	
-    ds.load();
 }
 
 function genContentList() {
-	var store = new Ext.ux.data.PagingStore({
+	contentStore = new Ext.ux.data.PagingStore({
 		totalProperty: 'url_count',
 		root: 'items',
 		fields: ['title', 'url', 'views', 'shares', 'services'],
@@ -110,17 +79,15 @@ function genContentList() {
 
 	var pagebar = new Ext.PagingToolbar({
 		pageSize: 4,
-		store: store,
+		store: contentStore,
 		ctCls:'pagingBar',
 		plugins: new Ext.ux.CustomPaging(),
 	});
 	
-
-
 	var panel = new Ext.Panel({
 		items: new Ext.DataView({                                                                                                                
 			id: 'resultsView',
-			store: store,
+			store: contentStore,
 			tpl: tpl,
 			height:222,
 			itemSelector:'div.thumb-wrap',
@@ -132,6 +99,8 @@ function genContentList() {
 	panel.render('content');
 }
 
+var contentStore;
+var topicStore;
 
 Ext.onReady(function(){
 	//Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
