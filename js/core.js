@@ -15,7 +15,7 @@ function genTopicCloud() {
 			{name: 'score'},
 			{name: 'tag', mapping: 'neigh'}
 		]),
-		autoLoad: { params: { start: 0, limit: 20, domain: 'foxnews.com', period: 30, topic: 'Obama' } }
+		autoLoad: { params: { start: 0, limit: 20, domain: currentDomain, period: currentPeriod, topic: currentTopic } }
 	});
 	
 		//sampleData.results.sort( function(){return (Math.round(Math.random())-0.5)});
@@ -30,9 +30,22 @@ function genTopicCloud() {
     cloud.on('tagselect', function(cloud, record, index){
 			//        alert('You clicked on "'+record.get('tag')+'"!');
 		delete contentStore.lastParams;
-		contentStore.load( { params: { start: 0, limit: 4, domain: 'foxnews.com', period: 30, topic: record.get('tag') } });
+		currentTopic = record.get('tag');
+		topicStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
+		contentStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
     });
     cloud.render('cloud');
+}
+
+function genFilter() {
+	Ext.each( [1, 7, 30], function(period){
+		Ext.fly(period + 'dayFilter').on('click', function(e, t) {	
+			currentPeriod = period;
+			Ext.fly(period + 'dayFilter').radioClass('selected');
+			topicStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
+			contentStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
+		});	
+	});
 }
 
 function genContentList() {
@@ -53,7 +66,7 @@ function genContentList() {
 			{name: 'shares'},
 			{name: 'services'}
 		]),
-			autoLoad: { params: { start: 0, limit: 4, domain: 'foxnews.com', period: 30, topic: 'Obama' } }
+			autoLoad: { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } }
 	});
 	
 	var tpl = new Ext.XTemplate( 
@@ -101,11 +114,17 @@ function genContentList() {
 
 var contentStore;
 var topicStore;
+var currentTopic = "Obama";
+var currentDomain = "foxnews.com";
+var currentPeriod = 30;
 
 Ext.onReady(function(){
 	//Ext.state.Manager.setProvider(new Ext.state.CookieProvider());
 	genTopicCloud();
+	genFilter();
 	genContentList();
+
+	
 
 });
 						
