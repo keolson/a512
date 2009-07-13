@@ -2,7 +2,7 @@ function genTopicCloud() {
     // Make an array of sample tags
     var sampleData = {
         results : [
-            {tag: 'Social Security', count: 5},
+            {tag: ' Security', count: 5},
             {tag: 'Retirement', count: 9},
             {tag: 'Savings Account', count: 5},
             {tag: 'Stock Trading', count: 7},
@@ -23,9 +23,9 @@ function genTopicCloud() {
 		}, [
 			{name: 'count'},
 			{name: 'score'},
-			{name: 'neigh'}
+			{name: 'tag', mapping: 'neigh'}
 		]),
-		autoLoad: { params: { start: 0, limit: 4, domain: 'foxnews.com', period: 30, topic: 'Obama' } }
+		autoLoad: { params: { start: 0, limit: 20, domain: 'foxnews.com', period: 30, topic: 'Obama' } }
 	});
 	
 	sampleData.results.sort( function(){return (Math.round(Math.random())-0.5)});
@@ -52,7 +52,7 @@ function genTopicCloud() {
 	
     var cloud = new Ext.ux.TagCloud({
         store: topicStore, 
-        displayField: 'neigh', 
+        displayField: 'tag', 
         weightField: 'count', 
         displayWeight: false
     }
@@ -70,7 +70,6 @@ function genContentList() {
 	var store = new Ext.ux.data.PagingStore({
 		totalProperty: 'url_count',
 		root: 'items',
-		idProperty: 'num',
 		fields: ['title', 'url', 'views', 'shares', 'services'],
 		proxy: new Ext.data.HttpProxy({
 			url: '../api/getTopics.php',
@@ -85,9 +84,9 @@ function genContentList() {
 			{name: 'shares'},
 			{name: 'services'}
 		]),
-		autoLoad: { params: { start: 0, limit: 4, domain: 'foxnews.com', period: 30, topic: 'Obama' } }
+			autoLoad: { params: { start: 0, limit: 4, domain: 'foxnews.com', period: 30, topic: 'Obama' } }
 	});
-
+	
 	var tpl = new Ext.XTemplate( 
 		'<tpl for=".">',
 		'<div class="listElement">',
@@ -123,15 +122,14 @@ function genContentList() {
 			id: 'resultsView',
 			store: store,
 			tpl: tpl,
-			autoHeight:false,
 			height:222,
 			itemSelector:'div.thumb-wrap',
 		}),
-		bbar: pagebar
+		bbar: pagebar,
+		border: false,
+
 	});
 	panel.render('content');
-
-	store.load();
 }
 
 

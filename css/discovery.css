@@ -7,6 +7,7 @@
 .hidden {
 	display:none;
 }
+
 body {
 /*	color: #FFF;*/
 	font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,Tahoma,Arial,sans-serif;
@@ -48,14 +49,10 @@ h6 {
 	border:1px #58585A solid;
 	background:#58585A;
 }
-#cloud{
-	height:50px;
-	border:1px #58585A solid;
-	background:#D1D2D4;
-}
 #sorting{
-	height:10px;
+	height:15px;
 	color:#3A3A3C;
+	float:right;
 }
 #content{
 	height:270px;
@@ -74,7 +71,7 @@ h6 {
 }
 
 .day{
-	float:right;
+	display:inline;
 }
 .clear {
 	clear: both;
@@ -85,17 +82,27 @@ h6 {
 	}			
 
 /* Tag Cloud CSS */
+#cloud{
+	height:50px;
+	border:1px #58585A solid;
+	background:#D1D2D4;
+}
+
 .x-cloud  {
     border:1px solid #CCC;
 	text-align:center;
 	color:#0F75BC;
 	font-family:Arial,sans-serif;
-	height:50px;
 }
+
 .x-cloud-item  {
     margin:0 0.2em;
-	display:inline;
+	float:left;
+	display: block;
+	margin: 0px auto;
+	
 }
+
 .x-cloud-item a  {
 	margin:5px;
 	color:#0F75BC;
@@ -181,7 +188,9 @@ h6 {
 	width:auto;
 }
 
-
+.x-panel-noborder .x-panel-bbar-noborder .x-toolbar {
+    border: none;
+}
 
 
 

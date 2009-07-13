@@ -85,7 +85,7 @@ Ext.extend(Ext.ux.TagCloud, Ext.Component, {
             this.el = ct.createChild(cfg, position);
         }
         
-		this.list = this.el.createChild({tag: "ul", cls: "x-cloud-ordered-list"});
+		this.list = this.el.createChild({tag: "div", cls: "x-cloud-ordered-list"});
         
 	},
 
@@ -104,9 +104,9 @@ Ext.extend(Ext.ux.TagCloud, Ext.Component, {
             var count = records[i].data[this.weightField];
             
 			var child = this.list.createChild({
-                tag: "li", 
+                tag: "div", 
                 cls: "x-cloud-item "+this.getWeightClassification(count),
-                html: '<a href="#">'+records[i].data[this.displayField]+(this.displayWeight ? ' ('+count+')' : '')+'</a>'
+                html: '<a href="#">'+records[i].data[this.displayField].replace(/_/g, ' ')+(this.displayWeight ? ' ('+count+')' : '')+'</a>'
                 });
 			
 			child.on('click', this.onSelect, this);
