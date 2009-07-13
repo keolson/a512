@@ -88,7 +88,7 @@ function genContentList() {
 	var tpl = new Ext.XTemplate( 
 		'<tpl for=".">',
 		'<div class="listElement">',
-		    '<div class="resultTitle"><a href="{url}" title="{title}">{[Ext.util.Format.ellipsis(values.title, 60, true)]}</a></div>',
+		    '<div class="resultTitle"><a href="{url}" title="{title}" target="_blank">{[Ext.util.Format.ellipsis(values.title, 60, true)]}</a></div>',
 		    '<div class="resultViews">viewed {views}</div>',
 			'<div class="separator"></div>',
 		    '<div class="resultShares">shared {shares}</div>',
