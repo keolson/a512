@@ -48,8 +48,9 @@ h6 {
 	height:25px;
 	border:1px #58585A solid;
 	background:#58585A;
-	font-size:17.5px;
+	font-size:17px;
 	color:#fff;
+	width:299px;
 }
 #sorting{
 	height:15px;
