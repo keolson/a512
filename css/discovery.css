@@ -81,51 +81,7 @@ h6 {
 			 background #888888;
 	}			
 
-/* Tag Cloud CSS */
-#cloud{
-	height:50px;
-	border:1px #58585A solid;
-	background:#D1D2D4;
-}
 
-.x-cloud  {
-    border:1px solid #CCC;
-	text-align:center;
-	color:#0F75BC;
-	font-family:Arial,sans-serif;
-}
-
-.x-cloud-item  {
-    margin:0 0.2em;
-	float:left;
-	display: block;
-	margin: 0px auto;
-	
-}
-
-.x-cloud-item a  {
-	margin:5px;
-	color:#0F75BC;
-	
-}
-.x-cloud-item a:hover  {
-	
-}
-.x-cloud-item-selected a  {
-    background-color: #316ac5;
-    color:#FFF;
-    text-decoration:none;
-}
-.x-cloud-item-selected a:hover  {
-    cursor:default;
-    color:#FFF;
-}
-.x-cloud-item.small { font-size: 0.90em; }
-.x-cloud-item.medium { font-size: 1.1em; }
-.x-cloud-item.large { font-size: 1.35em; }
-.x-cloud-item.largest { font-size: 1.5em; }
-
-/*end tag cloud css */
 
 .pagingBar{
 	margin-left:60px;
@@ -194,13 +150,63 @@ h6 {
 
 
 
+/* Tag Cloud CSS */
 
 
 
+.cloud_div  {
+	color:#0F75BC;
+	font-family:Arial,sans-serif;
+	min-height:20px;
+	max-height:50px;
+	border:1px #ccc solid;
+	white-space:nowrap;
+	overflow:hidden;
+	border:1px #58585A solid;
+	background:#D1D2D4;
+}
+.x-cloud-item  {
+	display:inline;
+	
+	text-align:center;
+}
+.x-cloud-item a  {
+	margin:5px;
+	color:#0F75BC;
+	text-decoration:none;
+	
+}
+.x-cloud-item a:hover  {
+	text-decoration:underline;
+}
+.x-cloud-item.small { font-size: 0.90em; }
+.x-cloud-item.medium { font-size: 1.2em; }
+.x-cloud-item.large { font-size: 1.35em; }
+.x-cloud-item.largest { font-size: 1.5em; }
 
+.clear{
+	clear:both;
+}
 
+#cloud{
+	border:1px #58585A solid;
+	background:#D1D2D4;
+	color:#0F75BC;
+	font-family:Arial,sans-serif;
+	min-height:45px;
+	max-height:50px;
+	overflow:hidden;
+	border:1px #58585A solid;
+}
 
-
+#cloud ul{
+	text-align:center;
+	margin:6px 10px;
+	list-style-position:outside;
+	margin:0px;
+	padding:0px;
+}
+/*end tag cloud css */
 
 
 
