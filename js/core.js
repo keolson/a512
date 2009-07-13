@@ -47,8 +47,7 @@ function genTopicCloud() {
 
 			//		Ext.fly('header').replaceWith(staticEl);
 
-		topicStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
-		contentStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
+		reload();
     });
     cloud.render('cloud');
 }
@@ -58,10 +57,14 @@ function genFilter() {
 		Ext.fly(period + 'dayFilter').on('click', function(e, t) {	
 			currentPeriod = period;
 			Ext.fly(period + 'dayFilter').radioClass('selected');
-			topicStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
-			contentStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
+			reload();
 		});	
 	});
+}
+
+function reload() {
+	topicStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
+	contentStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
 }
 
 function genContentList() {
