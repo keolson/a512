@@ -106,7 +106,7 @@ Ext.extend(Ext.ux.TagCloud, Ext.Component, {
 			var child = this.list.createChild({
                 tag: "li", 
                 cls: "x-cloud-item "+this.getWeightClassification(count),
-                html: '<a href="#">'+records[i].data[this.displayField]+(this.displayWeight ? ' ('+count+')' : '')+'</a>'
+                html: '<a href="#">'+records[i].data[this.displayField].replace(/_/g, ' ')+(this.displayWeight ? ' ('+count+')' : '')+'</a>'
                 });
 			
 			child.on('click', this.onSelect, this);
