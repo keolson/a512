@@ -118,7 +118,7 @@ function genContentList() {
 
 	});
 	panel.render('content');
-v}
+}
 
 var contentStore;
 var topicStore;
