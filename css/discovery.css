@@ -65,9 +65,18 @@ h6 {
 	border-bottom:2px #58585A solid;
 }
 #bottom_ad{
-	height:63px;
+	height:72px;
 	border:1px #58585A solid;
 }
+
+#bottom_ad_img{
+    background: url(../images/ad.png) no-repeat;
+	margin-left: 30px;
+	display: block;
+	height: 58px;
+	text-align: center;
+}
+
 #footer{
 	height:20px;
 	border:1px #58585A solid;
@@ -222,19 +231,19 @@ h6 {
 	margin-bottom:5px;
 }
 .resultViews{
-	font-size:11px;
+	font-size:10px;
 	display:inline;
 	color:#a0a2a4;
 	min-height:150px;
 }
 .resultShares{
-	font-size:11px;
+	font-size:10px;
 	display:inline;
 	color:#a0a2a4;
 }
 .resultServices{
 	display:inline;
-	font-size:11px;
+	font-size:10px;
 	color:#a0a2a4;
 	white-space:nowrap;
 }
@@ -243,6 +252,7 @@ h6 {
 	display:block;
 	text-align:center;
 	color:#3a3a3c;
+	clear: right;
 }
 
 .separator{

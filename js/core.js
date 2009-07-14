@@ -30,8 +30,8 @@ function genTopicCloud() {
     cloud.on('tagselect', function(cloud, record, index){
 		currentTopic = record.get('tag');
 
-		var headerTemplate = new Ext.Template(
-			'<div id="headerText">Discover more about: <span id="headerTopic">{topic}</span></div>'
+		var headerTemplate = new Ext.XTemplate(
+			'<div id="headerText">Discover more about: <span id="headerTopic">{[Ext.util.Format.ellipsis(values.topic, 14, false)]}</span></div>'
 		);
 		headerTemplate.overwrite('header', { topic: currentTopic });
 
