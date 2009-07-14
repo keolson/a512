@@ -14,6 +14,7 @@ Ext.ux.CustomPaging = Ext.extend(Object, {
 
 		pbar.on({
 			change: function(pb, data){
+
 				var pagingDivs = "";
 				
 				if(pb.customNumPages < data.pages){

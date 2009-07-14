@@ -29,6 +29,7 @@ function genTopicCloud() {
       							   );
     cloud.on('tagselect', function(cloud, record, index){
 		currentTopic = record.get('tag');
+		contentStore.setBaseParam('topic', currentTopic);
 
 		var headerTemplate = new Ext.XTemplate(
 			'<div id="headerText">Discover more about: <span id="headerTopic">{[Ext.util.Format.ellipsis(values.topic, 14, false)]}</span></div>'
@@ -44,6 +45,7 @@ function genFilter() {
 	Ext.each( [1, 7, 30], function(period){
 		Ext.fly(period + 'dayFilter').on('click', function(e, t) {	
 			currentPeriod = period;
+			contentStore.setBaseParam('period', currentPeriod);
 			Ext.fly(period + 'dayFilter').radioClass('selected');
 			reload();
 		});	
@@ -59,21 +61,28 @@ function genContentList() {
 	contentStore = new Ext.ux.data.PagingStore({
 		totalProperty: 'url_count',
 		root: 'items',
-		fields: ['title', 'url', 'views', 'shares', 'services'],
+		fields: ['oid', 'title', 'url', 'views', 'shares', 'services'],
 		proxy: new Ext.data.HttpProxy({
 			url: '../api/getTopics.php',
 		}),
 		reader: new Ext.data.JsonReader({
 			totalProperty: 'url_count',
 			root: 'urls',
+			idProperty: 'oid',
 		}, [
+			{name: 'oid'},
 			{name: 'title'},
 			{name: 'url'},
 			{name: 'views'},
 			{name: 'shares'},
 			{name: 'services'}
 		]),
-			autoLoad: { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } }
+		baseParams: {
+			domain: currentDomain,
+			period: currentPeriod, 
+			topic: currentTopic,
+		},
+		autoLoad: { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } },
 	});
 	
 	var tpl = new Ext.XTemplate( 

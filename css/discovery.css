@@ -231,19 +231,19 @@ h6 {
 	margin-bottom:5px;
 }
 .resultViews{
-	font-size:10px;
+	font-size:9px;
 	display:inline;
 	color:#a0a2a4;
 	min-height:150px;
 }
 .resultShares{
-	font-size:10px;
+	font-size:9px;
 	display:inline;
 	color:#a0a2a4;
 }
 .resultServices{
 	display:inline;
-	font-size:10px;
+	font-size:9px;
 	color:#a0a2a4;
 	white-space:nowrap;
 }
