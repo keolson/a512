@@ -84,9 +84,16 @@ h6 {
 	color:#fff;
 }
 
-.day{
+.day a{
 	display:inline;
+	font-weight: bold;
 }
+
+.selected a{
+	display:inline;
+	color:#A9A9A9;
+}
+
 .clear {
 	clear: both;
 }
@@ -260,15 +267,6 @@ h6 {
 	margin-left:8px;
 	border:1px #ccc solid;
 	display:inline;
-}
-
-.day a{
-	/*color:#3a3a3c;*/
-}
-
-.selected a{
-	font-weight:bold;
-	/*color:#A0A2A4;*/
 }
 
 .icons{
