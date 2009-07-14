@@ -122,6 +122,7 @@ function genContentList() {
 		items: new Ext.DataView({                                                                                                                
 			id: 'resultsView',
 			store: contentStore,
+			height:239,
 			tpl: tpl,
 			itemSelector:'div.thumb-wrap',
 		}),

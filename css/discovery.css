@@ -224,6 +224,7 @@ h6 {
 	font-size:11px;
 	display:inline;
 	color:#a0a2a4;
+	min-height:150px;
 }
 .resultShares{
 	font-size:11px;
