@@ -33,7 +33,7 @@ function genTopicCloud() {
 		var headerTemplate = new Ext.XTemplate(
 			'<div id="headerText">Discover more about: <span id="headerTopic">{[Ext.util.Format.ellipsis(values.topic, 14, false)]}</span></div>'
 		);
-		headerTemplate.overwrite('header', { topic: currentTopic });
+		headerTemplate.overwrite('header', { topic: currentTopic.replace(/_/g, ' ') });
 
 		reload();
     });
