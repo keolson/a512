@@ -28,24 +28,12 @@ function genTopicCloud() {
     }
       							   );
     cloud.on('tagselect', function(cloud, record, index){
-			//        alert('You clicked on "'+record.get('tag')+'"!');
-		delete contentStore.lastParams;
 		currentTopic = record.get('tag');
 
-		var staticEl = new Ext.Element({
-			tag: 'div',
-			id: 'header',
-			html: 'Discover more about:'
-		});
-		var dynEl = new Ext.Element({
-			tag: 'div',
-			id: 'headerTopic',
-			html: currentTopic
-		});
-
-			//		Ext.fly('header').appendChild(dynEl);
-
-			//		Ext.fly('header').replaceWith(staticEl);
+		var headerTemplate = new Ext.Template(
+			'<div id="headerText">Discover more about: <span id="headerTopic">{topic}</span></div>'
+		);
+		headerTemplate.overwrite('header', { topic: currentTopic });
 
 		reload();
     });
@@ -131,7 +119,7 @@ function genContentList() {
 
 	});
 	panel.render('content');
-}
+v}
 
 var contentStore;
 var topicStore;
@@ -143,10 +131,16 @@ Ext.override(Ext.PagingToolbar, {
     refresh: function(){
         currentTopic = "Obama";
         currentPeriod = 30;
+		
+		
+		var headerTemplate = new Ext.Template(
+			'<div id="headerText">Discover what\'s popular right now!</div>'
+		);
+		headerTemplate.overwrite('header');
+
 
         delete this.store.lastParams;
-        topicStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
-        contentStore.load( { params: { start: 0, limit: 4, domain: currentDomain, period: currentPeriod, topic: currentTopic } });
+		reload();
     }
 });
 
