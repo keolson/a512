@@ -92,7 +92,7 @@ function genContentList() {
 				var arr = services.split(',');
 				var returnStr = '';
 				for ( var i = 0; i < arr.length; i++ ) {
-					returnStr += '<div class="' + arr[i] + '_icon"></div>';
+					returnStr += '<a class="' + arr[i] + '"></a>';
 				}
 				return returnStr;
 			},
@@ -119,7 +119,7 @@ function genContentList() {
 
 	});
 	panel.render('content');
-v}
+}
 
 var contentStore;
 var topicStore;

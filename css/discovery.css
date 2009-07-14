@@ -56,6 +56,7 @@ h6 {
 	height:15px;
 	color:#3A3A3C;
 	float:right;
+	margin-right:5px;
 }
 #content{
 	/*height:270px;*/
@@ -235,6 +236,7 @@ h6 {
 	display:inline;
 	font-size:11px;
 	color:#a0a2a4;
+	white-space:nowrap;
 }
 
 .ad_text{
@@ -249,3 +251,270 @@ h6 {
 	border:1px #ccc solid;
 	display:inline;
 }
+
+.day a{
+	/*color:#3a3a3c;*/
+}
+
+.selected a{
+	font-weight:bold;
+	/*color:#A0A2A4;*/
+}
+
+.icons{
+	display:inline;
+	margin-right:2px;
+}
+
+/*fav icons*/
+.sharethis,
+.aim,
+.aol,
+.blinklist,
+.blogger,
+.blogmarks,
+.care2,
+.current,
+.dealsplus,
+.delicious,
+.digg,
+.diigo,
+.email,
+.facebook,
+.faves,
+.fresqui,
+.friendfeed,
+.friendster,
+.funp,
+.furl,
+.fark,
+.bus_exchange,
+.gmail,
+.google_bmarks,
+.hi5,
+.hugg,
+.kirtsy,
+.linkedin,
+.livejournal,
+.magnolia,
+.meneame,
+.mister_wong,
+.mixx,
+.msn,
+.myspace,
+.n4g,
+.netscape,
+.newsvine,
+.oknotizie,
+.orkut,
+.propeller,
+.reddit,
+.simpy,
+.slashdot,
+.sms,
+.sphinn,
+.stumbleupon,
+.tailrank,
+.technorati,
+.twitter,
+.typepad,
+.windows_live,
+.wordpress,
+.xanga,
+.yahoo,
+.yahoo_bmarks,
+.ybuzz,
+.yahoo_myweb,
+.yigg {
+	background-image:url(http://w.sharethis.com/share3x/images/sprite2_033109.gif);
+	background-repeat:no-repeat;
+	display:inline;
+	padding:2px 4px 2px 12px;
+	white-space:nowrap;
+	margin-left:2px;
+}
+.sharethis {
+	background:url(http://w.sharethis.com/share3x/images/share-icon.gif) no-repeat left center;
+}
+.aim {
+	background-position:0 -420px;
+}
+.aol {
+	background-position:0 -439px;
+}
+.blinklist {
+	background-position:0 0;
+}
+.blogger {
+	background-position:0 -680px;
+}
+.blogmarks {
+	background-position:0 -60px;
+}
+.care2 {
+	background-position:0 -880px;
+}
+.current {
+	background-position:0 -640px;
+}
+.dealsplus {
+	background-position:0 -1160px;
+}
+.delicious {
+	background-position:0 -40px;
+}
+.digg {
+	background-position:0 -20px;
+}
+.diigo {
+	background-position:0 -780px;
+}
+.email {
+	background-position:0 -460px;
+}
+.facebook {
+	background-position:0 -180px;
+}
+.faves {
+	background-position:0 -840px;
+}
+.fresqui {
+	background-position:0 -980px;
+}
+.friendfeed {
+	background-position:0 -1140px;
+}
+.friendster {
+	background-position:0 -1120px;
+}
+.funp {
+	background-position:0 -1000px;
+}
+.furl {
+	background-position:0 -160px;
+}
+.gmail {
+	background-position:0 -480px;
+}
+.google_bmarks {
+	background-position:0 -220px;
+}
+.hi5 {
+	background-position:0 -1100px;	
+}
+.hugg {
+	background-position:0 -1020px;
+}
+.kirtsy {
+	background-position:0 -920px;
+}
+.linkedin {
+	background-position:0 -1240px;
+}
+.livejournal {
+	background-position:0 -1060px;
+}
+.magnolia {
+	background-position:0 -240px;
+}
+.meneame {
+	background-position:0 -820px;
+}
+.mister_wong {
+	background-position:0 -740px;
+}
+.mixx {
+	background-position:0 -580px;
+}
+.msn {
+	background-position:0 -499px;
+}
+.myspace {
+	background-position:0 -520px;
+}
+.n4g {
+	background-position:0 -900px;
+}
+.netscape {
+	background-position:0 -280px;
+}
+.newsvine {
+	background-position:0 -360px;
+}
+.oknotizie {
+	background-position:0 -960px;
+}
+.orkut {
+	background-position:0 -1080px;
+}
+.propeller {
+	background-position:0 -600px;
+}
+.reddit {
+	background-position:0 -320px;
+}
+.simpy {
+	background-position:0 -860px;
+}
+.slashdot {
+	background-position:0 -800px;
+}
+.sms {
+	background-position:0 -540px;
+}
+.sphinn {
+	background-position:0 -1180px;
+}
+.stumbleupon {
+	background-position:0 -140px;
+}
+.tailrank {
+	background-position:0 -100px;
+}
+.technorati {
+	background-position:0 -120px;
+}
+.twitter {
+	background-position:0 -620px;
+}
+.typepad {
+	background-position:0 -700px;
+}
+.windows_live {
+	background-position:0 -300px;
+}
+.wordpress {
+	background-position:0 -660px;
+}
+.xanga {
+	background-position:0 -1200px;
+}
+.yahoo {
+	background-position:0 -559px;
+}
+.yahoo_bmarks {
+	background-position:0 -720px;
+}
+.ybuzz {
+	background-position:0 -1220px;
+}
+.yahoo_myweb {
+	background-position:0 -80px;
+}
+.yigg {
+	background-position:0 -760px;
+}
+.fark {
+	background-position:0 -1280px;
+}
+.bus_exchange{
+	background-position:0 -1300px;
+}
+
+/*end fav icons*/
+
+
+
+
+
+
